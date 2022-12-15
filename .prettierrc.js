@@ -8,7 +8,7 @@ module.exports = {
   quoteProps: 'as-needed',
   singleQuote: true,
   semi: true,
-  // printWidth: 80,
+  printWidth: 80,
   useTabs: true,
   tabWidth: 2,
 };

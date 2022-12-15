@@ -2,7 +2,8 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    'react-native/react-native': true
+    'react-native/react-native': true,
+    "jest": true
   },
   extends: [
     'plugin:react/recommended',
@@ -28,6 +29,5 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'global-require': 'off',
     'no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
-    'prettier/prettier': 'error'
   },
 };
