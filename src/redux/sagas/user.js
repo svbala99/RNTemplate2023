@@ -6,14 +6,12 @@ import { loginApiService } from '../../api';
 
 // actions
 import {
-	fetchUserSuccess,
-	fetchUserError,
 	loginSuccess,
 	loginError,
 } from '../actions/user';
 
 // types
-import { USER_FETCH_LOADING, LOGIN_LOADING } from '../types/user';
+import { LOGIN_LOADING } from '../types/user';
 
 function* loginSaga(action) {
 	try {
@@ -23,17 +21,8 @@ function* loginSaga(action) {
 		yield put(loginError());
 	}
 }
-
-function* fetchUserSaga() {
-	try {
-		yield put(fetchUserSuccess());
-	} catch (error) {
-		yield put(fetchUserError());
-	}
-}
-
+	
 function* workerSaga() {
-	yield takeLatest(USER_FETCH_LOADING, fetchUserSaga);
 	yield takeLatest(LOGIN_LOADING, loginSaga);
 }
 
