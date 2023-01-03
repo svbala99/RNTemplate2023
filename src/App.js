@@ -1,11 +1,13 @@
 // library imports
 import 'react-native-gesture-handler';
 import React from 'react';
+import { Text } from 'react-native';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 // user imports
 import MainNavigation from './navigation';
-import store from './redux/store';
+import store, { persistor } from './redux/store';
 
 /**
  * @function App
@@ -15,7 +17,9 @@ import store from './redux/store';
 function App() {
 	return (
 		<Provider store={store}>
-			<MainNavigation />
+			<PersistGate loading={<Text>Loading...</Text>} persistor={persistor}>
+				<MainNavigation />
+			</PersistGate>
 		</Provider>
 	);
 }

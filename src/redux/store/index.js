@@ -5,6 +5,7 @@ import {
 	compose,
 } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import { persistStore } from 'redux-persist';
 
 // Imports: Redux Root Reducer
 import rootReducer from '../reducers';
@@ -22,4 +23,5 @@ const store = createStore(
 sagaMiddleware.run(rootSaga);
 
 // Exports
+export const persistor = persistStore(store);
 export default store;
