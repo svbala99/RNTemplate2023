@@ -22,7 +22,7 @@ const initialState = {
  * @param {Function} action
  * @returns {JSON}
  */
-const userReducer = (action, state = initialState) => {
+const userReducer = (state = initialState, action = {}) => {
 	switch (action.type) {
 		case USER_FETCH_LOADING: {
 			return {
