@@ -17,7 +17,7 @@ const { HOME, LOGIN } = CONSTANTS.screenTitles;
 const Stack = createStackNavigator();
 
 function MainStack() {
-	const isLoggedIn = useSelector((state) => state.user?.user?.data?.Token);
+	const isLoggedIn = useSelector((state) => state.auth?.user?.data?.Token);
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<Stack.Navigator>

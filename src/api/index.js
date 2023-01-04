@@ -9,7 +9,7 @@ import { RoutingConstants, BASE_URL } from '../constants';
  * @param {Object} payload
  * @returns {JSON}
  */
-export const loginApiService = async (payload = {}) => {
+const loginApiService = async (payload = {}) => {
 	const { login } = RoutingConstants;
 	const loginUrl = `${BASE_URL}${login}`;
 	try {
@@ -20,18 +20,4 @@ export const loginApiService = async (payload = {}) => {
 	}
 };
 
-/**
- * @function register
- * @param {Object} payload
- * @returns {JSON}
- */
-export const registerApiService = async (payload = {}) => {
-	const { register } = RoutingConstants;
-	const registerUrl = `${BASE_URL}${register}`;
-	try {
-		const response = await axios.post(registerUrl, payload);
-		return response.data;
-	} catch (error) {
-		return error;
-	}
-};
+export default loginApiService;

@@ -4,7 +4,7 @@ import {
 	LOGIN_SUCCESS,
 	LOGIN_ERROR,
 	LOGOUT,
-} from '../types/user';
+} from '../types/auth';
 
 const initialState = {
 	loading: false,
@@ -14,12 +14,12 @@ const initialState = {
 // reducers
 
 /**
- * @function userReducer
+ * @function authReducer
  * @param {JSON} state
  * @param {Function} action
  * @returns {JSON}
  */
-const userReducer = (state = initialState, action = {}) => {
+const authReducer = (state = initialState, action = {}) => {
 	switch (action.type) {
 		case LOGIN_LOADING: {
 			return {
@@ -51,4 +51,4 @@ const userReducer = (state = initialState, action = {}) => {
 };
 
 // exports
-export default userReducer;
+export default authReducer;

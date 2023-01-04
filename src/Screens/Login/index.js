@@ -11,7 +11,7 @@ import {
 import { useDispatch } from 'react-redux';
 
 // user imports
-import { loginRequest } from '../../redux/actions/user';
+import { loginRequest } from '../../redux/actions/auth';
 
 const styles = StyleSheet.create({
 	container: {
@@ -75,7 +75,7 @@ function Login() {
 				<TextInput
 					value={email}
 					style={styles.TextInput}
-					placeholder="Email"
+					placeholder='Email'
 					placeholderTextColor='#003f5c'
 					onChangeText={(updatedEmail) => setEmail(updatedEmail)}
 				/>
